@@ -59,6 +59,17 @@ var tests = {
             assert.equal(hills.city, 'Beverly Hills');
         }
     },
+    /**
+     * Test the new county data
+     */
+    'Morgantown WV': {
+        topic: function() {
+            return zipcodes.lookup(26505);
+        },
+        'should be ok': function(morgantown) {
+            assert.equal(morgantown.county, 'Monongalia');
+        }
+    },
     'distance': {
         topic: function() {
             return null;

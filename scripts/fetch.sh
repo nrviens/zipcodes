@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 set -e
 
@@ -28,6 +28,10 @@ if [ ! -f ./US.txt ]; then
     $unzip -oq "US.zip" "US.txt"
 fi
 
+if [ ! -f ../resources/zip_fips_county_and_state.csv ]; then
+    echo "Could not find Zip to FIPS code with county and state CSV file (./zip_fips_county_and_state.csv)"
+    exit 1;
+fi
 
 wait
 
