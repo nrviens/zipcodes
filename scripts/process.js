@@ -5,6 +5,7 @@ var fs = require('fs'),
     zips = {},
     str,
     data = fs.readFileSync('./free-zipcode-database.csv', 'utf8').replace(/\r/g, '').split('\n'),
+    fipsData = fs.readFileSync('../resources/zip_fips_county_and_state.csv', 'utf8').replace(/\r/g, '').split('\n'),
     geonamesData = fs.readFileSync('./US.txt', 'utf8').split('\n');
 
 data.shift();
@@ -13,6 +14,10 @@ var clean = function(str) {
     return str.replace(/"/g, '').trimLeft();
 }
 
+/**
+ * Converts the first character of the string (str) to uppercase
+ * @param {*} str a string you want to uppercase
+ */
 var ucfirst = function(str) {
     str = str.toLowerCase();
     var lines = str.split(' ');
@@ -89,5 +94,6 @@ for (var i in zips) {
 
 str = 'exports.codes = ' + JSON.stringify(zips) + ';\n';
 str += 'exports.stateMap = ' + JSON.stringify(stateMap) + ';\n';
+str += 'exports.countyMap = ' + JSON.stringify(fipsData) + ';\n';
 
 fs.writeFileSync(path.join('../', 'lib', 'codes.js'), str, 'utf8');

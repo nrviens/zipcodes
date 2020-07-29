@@ -14,7 +14,7 @@ It was then transformed into a JSON object and then wrapped with some helper met
 Usage
 -----
 
-    var zipcodes = require('zipcodes');
+    var zipcodes = require('zipcodes-nrviens');
 
 
 Zipcode Lookup
@@ -121,3 +121,5 @@ To just fetch and process the zipcodes:
 To run the very simple test suite:
 
     make tests
+
+Note: This is a fork of davglass' zipcode lookup project.

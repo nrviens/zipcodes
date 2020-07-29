@@ -1,16 +1,16 @@
 {
-  "name": "zipcodes",
+  "name": "zipcodes-nrviens",
   "description": "Useful zipcode database with helper methods",
-  "version": "8.0.0",
-  "author": "Dav Glass <davglass@gmail.com>",
+  "version": "8.0.1",
+  "author": "Nick Viens <nrviens@gmail.com>",
   "bugs": {
-    "web": "http://github.com/davglass/zipcodes/issues"
+    "web": "http://github.com/nrviens/zipcodes/issues"
   },
   "main": "./lib/index.js",
   "license": "BSD",
   "repository": {
     "type": "git",
-    "url": "http://github.com/davglass/zipcodes.git"
+    "url": "http://github.com/nrviens/zipcodes.git"
   },
   "scripts": {
     "test": "istanbul cover --print both -- vows --spec ./tests/lookup.js"
