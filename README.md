@@ -20,14 +20,18 @@ Usage
 Zipcode Lookup
 --------------
 
-    var hills = zipcodes.lookup(90210);
+    var motown = zipcodes.lookup(26505);
 
-    { zip: '90210',
-      latitude: 34.088808,
-      longitude: -118.406125,
-      city: 'Beverly Hills',
-      state: 'CA',
-      country: 'US' }
+    {
+        "zip": "26505",
+        "latitude": 39.6505,
+        "longitude": -79.944,
+        "city": "Morgantown",
+        "state": "WV",
+        "country": "US",
+        "fips": 54061,
+        "county": "Monongalia"
+    }
 
 Distance
 --------

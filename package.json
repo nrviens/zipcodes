@@ -1,16 +1,16 @@
 {
   "name": "zipcodes-nrviens",
   "description": "Useful zipcode database with helper methods",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "author": "Nick Viens <nrviens@gmail.com>",
   "bugs": {
-    "web": "http://github.com/nrviens/zipcodes/issues"
+    "url": "http://github.com/nrviens/zipcodes/issues"
   },
   "main": "./lib/index.js",
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
-    "url": "http://github.com/nrviens/zipcodes.git"
+    "url": "git+ssh://git@github.com/nrviens/zipcodes.git"
   },
   "scripts": {
     "test": "istanbul cover --print both -- vows --spec ./tests/lookup.js"
@@ -18,5 +18,13 @@
   "devDependencies": {
     "istanbul": "^0.4.5",
     "vows": "^0.8.1"
-  }
+  },
+  "homepage": "https://github.com/nrviens/zipcodes#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "keywords": [
+    "zipcode"
+  ]
 }
