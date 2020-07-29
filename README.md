@@ -1,6 +1,8 @@
 Zip Code Lookups
 ================
 
+Note: This is a fork of [davglass' zipcode lookup project](https://github.com/davglass/zipcodes).
+
 [![Build Status](https://travis-ci.org/davglass/zipcodes.svg?branch=master)](https://travis-ci.org/davglass/zipcodes)
 
 A localized (flatfile) zipcode lookup.
@@ -10,6 +12,18 @@ USA zip codes data was taken from here: http://federalgovernmentzipcodes.us/
 Canada zip codes data was taken from here: https://www.aggdata.com/download_sample.php?file=ca_postal_codes.csv
 
 It was then transformed into a JSON object and then wrapped with some helper methods.
+
+> In addition to the data provided above, this fork includes county names and county codes.
+
+This has the inclusion of county data (fips county code and county name) which was taken from here: https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/?cid=nrcs143_013697#
+* This includes county FIPS Code to County name and state
+
+The zip code to FIPS code data was taken from here: https://www.huduser.gov/portal/datasets/usps_crosswalk.html#data
+* This includes the Zip code to FIPS County code
+
+After combining these two datasets, I ended up with a new dataset of Zip Code, FIPS County Code, County Name, and State.
+
+This data has been included in the existing data from the forked project to add additional detail to the zip code lookup
 
 Usage
 -----
@@ -57,12 +71,28 @@ Lookup By Name
     var l = zipcodes.lookupByName('Cupertino', 'CA');
     
     //Always returns an array, since cities can have multiple zip codes
-    [ { zip: '95015',
-        latitude: 37.323,
-        longitude: -122.0527,
-        city: 'Cupertino',
-        state: 'CA',
-        country: 'US' } ]
+    [
+        {
+            "zip": "95014",
+            "latitude": 37.318,
+            "longitude": -122.0449,
+            "city": "Cupertino",
+            "state": "CA",
+            "country": "US",
+            "fips": "06085",
+            "county": "Santa Clara"
+        },
+        {
+            "zip": "95015",
+            "latitude": 37.323,
+            "longitude": -122.0527,
+            "city": "Cupertino",
+            "state": "CA",
+            "country": "US",
+            "fips": "06085",
+            "county": "Santa Clara"
+        }
+    ]
 
 
 Lookup by Radius
@@ -96,17 +126,16 @@ Zipcode Random
 
     var zipObj = zipcodes.random();
 
-    { zip: '90210',
-      latitude: 34.088808,
-      longitude: -118.406125,
-      city: 'Beverly Hills',
-      state: 'CA',
-      country: 'US' }
-      
-TODO
-----
-
-Add support for importing into MongoDB or CouchDB to speed up searchs.
+    {
+        "zip": "60944",
+        "latitude": 41.0634,
+        "longitude": -87.625,
+        "city": "Hopkins Park",
+        "state": "IL",
+        "country": "US",
+        "fips": 17091,
+        "county": "Kankakee"
+    }
 
 Development
 -----------
@@ -125,5 +154,3 @@ To just fetch and process the zipcodes:
 To run the very simple test suite:
 
     make tests
-
-Note: This is a fork of davglass' zipcode lookup project.
