@@ -1,7 +1,7 @@
 {
   "name": "zipcodes-nrviens",
-  "description": "Useful zipcode database with helper methods. Contains a zip code to fips code (county code) lookup",
-  "version": "8.0.5",
+  "description": "Useful zipcode database with helper methods. Contains a zip code to fips code (county code) lookup. Also has the ability to lookup state abbreviation to state name and vice-versa.",
+  "version": "8.0.6",
   "author": "Nick Viens <nrviens@gmail.com>",
   "bugs": {
     "url": "http://github.com/nrviens/zipcodes/issues"
